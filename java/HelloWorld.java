@@ -1,17 +1,26 @@
+import tree.BST;
+
 public class HelloWorld {
     public int num = 1;
     public  static String str = "dian";
     public static void main(String[] args) {
-        LinkedListQueue<Integer> arr = new LinkedListQueue<>();
-        for (int i = 0; i < 10; i++)
-            arr.enqueue(i);
+        BST<Integer> bst = new BST<>();
+        int[] nums = {5,3,6,8,4,2};
+        for (int num: nums)
+            bst.add(num);
 
-        System.out.println(arr);
-        arr.enqueue(666);
-        arr.dequeue();
-        System.out.println(arr);
+        bst.preOrder();
+        System.out.println("=======\n");
+        bst.removeMin();
+        bst.preOrderNR();
+        System.out.println("=======\n");
+        bst.inOrder();
+        System.out.println("=======\n");
+        bst.postOrder();
 
-        int front = arr.getFront();
-        System.out.println(front);
+        System.out.println("=======\n");
+        bst.levelOrder();
+
+
     }
 }
